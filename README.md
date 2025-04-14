@@ -32,6 +32,7 @@ Ideal for:
 
 ---
 
+
 ## 🛠️ Tech Stack
 
 - **CrewAI** – Multi-agent orchestration
@@ -43,3 +44,55 @@ Ideal for:
 ---
 
 
+## 🧪 Performance Benchmarks
+
+| Agent                      | Task Description                        | Avg Time (approx) |
+|---------------------------|-----------------------------------------|-------------------|
+| 📡 Market News Monitor     | Scrapes live financial news             | ~45 seconds       |
+| 📊 Data Analyst Agent      | Extracts and interprets insights        | ~60 seconds       |
+| ✍️ Content Creator Agent   | Generates blog + social media content   | ~75 seconds       |
+| ✅ Quality Assurance Agent | Formats content in markdown             | ~30 seconds       |
+| ⏱️ **Total Runtime**       | End-to-end pipeline execution           | **~3.5 minutes**  |
+
+> 🧠 Benchmarks based on `mistral-large-latest` model and real-time web scraping.
+
+---
+
+
+## 🤖 LLM Models Used
+
+This project uses open-weight models from [Mistral](https://mistral.ai/), accessed via the **LiteLLM** routing layer.
+
+### 🔹 `mistral-small-latest`
+- Lightweight and fast
+- Best for retrieval tasks and embeddings
+- Used in: `WebsiteSearchTool`, `embedder`, lightweight analysis
+
+### 🔹 `mistral-large-latest`
+- Strong reasoning and summarization capabilities
+- Handles long, structured generation tasks
+- Used in: All core agents (`llm=llms['large']`) — blog writing, analysis, formatting
+
+> Both models are accessed through the `mistralai` provider with `LiteLLM`, allowing flexible switching, logging, and future fallback support.
+
+---
+
+
+## 🧪 How to Run
+
+1. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+2. Set your environment variables:
+
+```
+export MISTRAL_API_KEY=your_key_here
+export SERPER_API_KEY=your_key_here
+```
+3. Launch the notebook:
+```
+jupyter notebook main.ipynb
+```
+4. Provide your topic (e.g. "US-China tariffs") and let the agents do the rest.
