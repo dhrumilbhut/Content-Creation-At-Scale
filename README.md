@@ -61,7 +61,7 @@ Ideal for:
 
 ## 🤖 LLM Models Used
 
-This project uses open-weight models from [Mistral](https://mistral.ai/), accessed via the **LiteLLM** routing layer.
+This project uses open-weight models from [Mistral](https://mistral.ai/).
 
 ### 🔹 `mistral-small-latest`
 - Lightweight and fast
@@ -73,7 +73,6 @@ This project uses open-weight models from [Mistral](https://mistral.ai/), access
 - Handles long, structured generation tasks
 - Used in: All core agents (`llm=llms['large']`) — blog writing, analysis, formatting
 
-> Both models are accessed through the `mistralai` provider with `LiteLLM`, allowing flexible switching, logging, and future fallback support.
 
 ---
 
